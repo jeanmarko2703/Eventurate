@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Eventurate</title>
+
+<!-- Custom fonts for this template-->
+<link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+	type="text/css">
+<link
+	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+	rel="stylesheet">
+
+<link rel="icon" type="image/ico" href="/img/rayo.ico" />
+
+<!-- Custom styles for this template-->
+<link href="/css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+	<!-- Page Wrapper -->
+	<div id="wrapper">
+
+		<!-- Sidebar -->
+		<ul
+			class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+			id="accordionSidebar">
+
+			<!-- Sidebar - Brand -->
+			<a
+				class="sidebar-brand d-flex align-items-center justify-content-center"
+				th:href="@{/laboratories/list}">
+				<div class="sidebar-brand-icon rotate-n-15">
+					<i class="fas fa-bolt"></i>
+				</div>
+				<div class="sidebar-brand-text mx-3">EVENTURATE</div>
+			</a>
+
+			<!-- Divider -->
+			<hr class="sidebar-divider my-0">
+
+
+
+			<!-- Nav Item - Pages Collapse Menu -->
+			<li class="nav-item"><a class="nav-link collapsed" href="#"
+				data-target="#collapseTwo" aria-expanded="false"
+				aria-controls="collapseTwo"> <i class="fas fa-fw fa-cog"></i> <span>Men&uacute;</span>
+			</a> <!-- Clientes-->
+				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+					data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
+						<a class="collapse-item" th:href="@{/users/listClient}">Clientes</a>
+					</div>
+				</div> <!-- Empresas-->
+				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+					data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
+						<a class="collapse-item" th:href="@{/users/listCompany}">Empresas</a>
+					</div>
+				</div> <!-- Eventos-->
+				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+					data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
+						<a class="collapse-item" th:href="@{/events/list}">Eventos</a>
+					</div>
+				</div> <!-- Entidades bancarias-->
+				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+					data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
+						<a class="collapse-item" th:href="@{/banking_entities/list}">Entidades
+							Bancarias</a>
+					</div>
+				</div> <!-- Categorias -->
+				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+					data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
+						<a class="collapse-item" th:href="@{/categories/list}">Categorías</a>
+					</div>
+				</div> <!-- Ciudades -->
+				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+					data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
+						<a class="collapse-item" th:href="@{/cities/list}">Ciudades</a>
+					</div>
+				</div> <!-- Paises-->
+				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+					data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
+						<a class="collapse-item" th:href="@{/countries/list}">Países</a>
+					</div>
+				</div>
+				<!--Roles-->
+				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+					data-parent="#accordionSidebar">
+					<div class="bg-white py-2 collapse-inner rounded">
+						<a class="collapse-item" th:href="@{/roles/list}">Roles</a>
+					</div>
+				</div></li>
+			<!-- Divider -->
+			<hr class="sidebar-divider">
+
+			<!-- Sidebar Toggler (Sidebar) -->
+
+
+		</ul>
+		<!-- End of Sidebar -->
+
+		<!-- Content Wrapper -->
+		<div id="content-wrapper" class="d-flex flex-column">
+
+			<!-- Main Content -->
+			<div id="content">
+
+				<!-- Topbar -->
+				<nav
+					class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+					<!-- Sidebar Toggle (Topbar) -->
+					<button id="sidebarToggleTop"
+						class="btn btn-link d-md-none rounded-circle mr-3">
+						<i class="fa fa-bars"></i>
+					</button>
+
+					<!-- Topbar Search -->
+
+
+					<!-- Topbar Navbar -->
+					<ul class="navbar-nav ml-auto">
+
+						<!-- Nav Item - Search Dropdown (Visible Only XS) -->
+						<li class="nav-item dropdown no-arrow d-sm-none"><a
+							class="nav-link dropdown-toggle" href="#" id="searchDropdown"
+							role="button" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false"> <i class="fas fa-search fa-fw"></i>
+						</a></li>
+
+
+
+						<!-- Nav Item - User Information -->
+						<li class="nav-item dropdown no-arrow"><a
+							class="nav-link dropdown-toggle" href="#" id="userDropdown"
+							role="button" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false"> <span
+								class="mr-2 d-none d-lg-inline text-gray-600 small"><img
+									th:src="@{/img/logoutclient.png}" width="40" height="40"
+									alt="logo" align="middle"></img></span>
+						</a> <!-- Dropdown - User Information --></li>
+
+					</ul>
+
+				</nav>
+				<!-- End of Topbar -->
+
+				<!-- Begin Page Content -->
+				<div class="container-fluid">
+
+					<!-- Page Heading -->
+					<h1 class="h3 mb-4 text-gray-800">Eventos</h1>
+
+					<form th:action="@{/events/find}" method="post"
+						th:object="${event}">
+
+						<div class="form-group">
+							<table>
+								<tbody>
+									<tr>
+										<td><label for="nameEvent"
+											class="col-sm-2 col-form-label">Buscar:</label></td>
+										<td><input type="text" class="form-control"
+											th:field="*{nameEvent}" id="nameEvent"
+											placeholder="Nombre del Evento" required="required"></input></td>
+										<td><button type="submit" class="btn btn-danger">
+												<i class="iconf fa fa-search" style="color: white;"></i>
+											</button></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+					</form>
+
+					<!-- Buscar por categoria -->
+					<form th:action="@{/events/findCategory}" method="post"
+						th:object="${event}">
+						<div class="form-group">
+							<table>
+								<tbody>
+									<tr>
+										<td><label for="nameEvent"
+											class="col-sm-2 col-form-label">Buscar por categoria:</label></td>
+										<td><select class="form-control" name="listcategory"
+											th:field="*{category.nameCategory}">
+												<option th:each="c:${listaCategorias}"
+													th:value="${c.nameCategory}" th:text="${c.nameCategory}"
+													th:selected="(${c.nameCategory}==*{category.nameCategory})"></option>
+										</select> <span class="select-btn"> <i
+												class="zmdi zmdi-chevron-down"></i>
+										</span></td>
+										<td><button type="submit" class="btn btn-danger">
+												<i class="iconf fa fa-search" style="color: white;"></i>
+											</button></td>
+								</tbody>
+							</table>
+						</div>
+					</form>
+
+					<a href="/events/list" class="btn btn-danger">Limpiar</a>
+
+
+					<hr class="sidebar-divider">
+
+					<table class="table table-striped">
+						<thead class="thead-dark">
+							<tr>
+								<th scope="col">Código</th>
+								<th scope="col">Evento</th>
+								<th scope="col">Precio entrada</th>
+								<th scope="col">Capacidad</th>
+								<th scope="col">N° Entradas disponibles</th>
+								<th scope="col">Fecha</th>
+								<th scope="col">Categoría</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="e: ${listaEventos}">
+								<td th:text="${e.idEvent}"></td>
+								<td th:text="${e.nameEvent}"></td>
+								<td th:text="${e.priceEvent}"></td>
+								<td th:text="${e.capacityEvent}"></td>
+								<td th:text="${e.availableEvent}"></td>
+								<td th:text="${#dates.format(e.dateEvent,'dd/MM/yyyy')}"></td>
+								<td th:text="${e.category.nameCategory}"></td>
+							</tr>
+						</tbody>
+					</table>
+
+					<p th:text="${mensaje}"></p>
+
+				</div>
+				<!-- /.container-fluid -->
+
+			</div>
+			<!-- End of Main Content -->
+
+			<!-- Footer -->
+			<footer class="sticky-footer bg-white">
+				<div class="container my-auto">
+					<div class="copyright text-center my-auto">
+						<span>Copyright &copy; Web 202002</span>
+					</div>
+				</div>
+			</footer>
+			<!-- End of Footer -->
+
+		</div>
+		<!-- End of Content Wrapper -->
+
+	</div>
+	<!-- End of Page Wrapper -->
+
+	<!-- Scroll to Top Button-->
+	<a class="scroll-to-top rounded" href="#page-top"> <i
+		class="fas fa-angle-up"></i>
+	</a>
+
+
+
+	<!-- Bootstrap core JavaScript-->
+	<script src="/vendor/jquery/jquery.min.js"></script>
+	<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Core plugin JavaScript-->
+	<script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+	<!-- Custom scripts for all pages-->
+	<script src="/js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>
