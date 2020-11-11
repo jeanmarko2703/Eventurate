@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Registro</title>
+<link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+	type="text/css">
+<link href="/css/style.css" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+	rel="stylesheet">
+<link rel="icon" type="image/ico" href="/img/rayo.ico" />
+<title></title>
+</head>
+
+<body class="form-v10">
+	<div class="page-content">
+		<div class="form-v10-content">
+			<form class="form-detail" th:action="@{/users/saveCompany}"
+				th:object="${userCompany}" method="post">
+				<div class="form-left">
+					<h2>Registrate Empresa</h2>
+					<!----Nombre-->
+					<div class="form-row">
+						<div class="nameLabel">
+							<label for="name">Nombre de la empresa: </label>
+						</div>
+						<div>
+							<input type="text" th:field="*{nameUser}" class="nameUser"
+								pattern="[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúñÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑ ]{2,254}"
+								title="Solo letras" required="" minlength="3" maxlength="70">
+							<div>
+								<small class="form-text text-danger"
+									th:if="${#fields.hasErrors('nameUser')}"
+									th:errors="*{nameUser}"></small>
+							</div>
+						</div>
+					</div>
+
+					<!--Contraseña-->
+					<div class="form-row">
+						<div class="nameLabel">
+							<label for="name">Contraseña: </label>
+						</div>
+						<div>
+							<input type="password" th:field="*{passwordUser}"
+								class="passwordUser" required="" minlength="3" maxlength="200">
+							<div>
+								<small class="form-text text-danger"
+									th:if="${#fields.hasErrors('passwordUser')}"
+									th:errors="*{passwordUser}"></small>
+							</div>
+						</div>
+					</div>
+
+					<!--phone-->
+					<div class="form-row">
+						<div class="nameLabel">
+							<label for="name">Telefono: </label>
+						</div>
+						<div>
+							<input type="number" th:field="*{phoneUser}" class="phoneUser"
+								required="" max="999999999" min="900000000">
+							<div>
+								<small class="form-text text-danger"
+									th:if="${#fields.hasErrors('phoneUser')}"
+									th:errors="*{phoneUser}"></small>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="vl"></div>
+				<div class="form-right">
+
+					<!--phone-->
+					<div class="form-row">
+						<div class="nameLabel">
+							<label for="name">Correo Eléctronico: </label>
+						</div>
+						<div>
+							<input type="text" th:field="*{emailUser}" class="emailUser"
+								pattern="[ A-Za-zäÄëËïÏöÖüÜáéíóúáéíóúñÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙÑ_-@.]{2,254}"
+								title="Solo letras" required="" minlength="15" maxlength="70">
+							<div>
+								<small class="form-text text-danger"
+									th:if="${#fields.hasErrors('emailUser')}"
+									th:errors="*{emailUserr}"></small>
+							</div>
+						</div>
+					</div>
+
+					<!--RUC-->
+					<div class="form-row">
+						<div class="nameLabel">
+							<label for="name">RUC: </label>
+						</div>
+						<div>
+							<input type="number" th:field="*{rucCompany}" class="rucCompany"
+								required="" max="99999999999" min="10000000000">
+							<div>
+								<small class="form-text text-danger"
+									th:if="${#fields.hasErrors('rucCompany')}"
+									th:errors="*{rucCompany}"></small>
+							</div>
+						</div>
+					</div>
+
+					<!----Dominio-->
+					<div class="form-row">
+						<div class="nameLabel">
+							<label for="name">Dominio de la empresa: </label>
+						</div>
+						<div>
+							<input type="text" th:field="*{domainCompany}"
+								class="domainCompany" required="">
+							<div>
+								<small class="form-text text-danger"
+									th:if="${#fields.hasErrors('domainCompany')}"
+									th:errors="*{domainCompany}"></small>
+							</div>
+						</div>
+					</div>
+
+					<!-- City -->
+					<div class="form-row">
+						<div class="nameLabel">
+							<label for="name">Ciudad: </label>
+						</div>
+						<div>
+							<select class="form-control" th:field="*{city.idCity}">
+								<option th:each="ci: ${listaCiudades}" th:value="${ci.idCity}"
+									th:text="${ci.nameCity}"
+									th:selected="(${ci.idCity} == *{city.idCity})"></option>
+							</select>
+						</div>
+
+					</div>
+
+
+					<div class="form-row-last">
+						<input type="submit" name="register" class="register"
+							value="Registrar"></input>
+					</div>
+
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- Bootstrap core JavaScript-->
+	<script src="/vendor/jquery/jquery.min.js"></script>
+	<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Core plugin JavaScript-->
+	<script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+	<!-- Custom scripts for all pages-->
+	<script src="/js/sb-admin-2.min.js"></script>
+</body>
+</html>
+
+</html>
